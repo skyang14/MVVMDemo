@@ -23,6 +23,7 @@ import okhttp3.RequestBody;
  */
 
 public class Requester {
+    private static final String TAG = "Requester";
     private static Gson sGson;
 
     public static MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
@@ -89,7 +90,7 @@ public class Requester {
             public void onSucceed(JsonObject object) {
                 super.onSucceed(object);
                 try {
-                    Log.e("wwh", "NetWorker --> onSucceed: " + object);
+                    Log.e(TAG, "NetWorker --> onSucceed: " + object);
                     Type argument;
                     if (listener.getClass().isInterface()) {
                         argument = ((ParameterizedType) listener.getClass().getGenericInterfaces()[0])

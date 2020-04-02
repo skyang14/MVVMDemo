@@ -1,10 +1,13 @@
 package com.yangshikun.mvvmdemo;
 
+import android.util.Log;
+
 import com.yangshikun.mvvmdemo.base.BaseActivity;
 import com.yangshikun.mvvmdemo.databinding.ActivityMainBinding;
+import com.yangshikun.mvvmdemo.utils.pinyin.HanyuPinyinHelper;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding,MainViewModel> {
-
+    private static final String TAG = "MainActivity";
     @Override
     protected int layoutId() {
         return R.layout.activity_main;
@@ -24,6 +27,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainViewModel
         });
         //不观察，直接读取数据库
        // viewModel.items.addAll(AppDatabase.getDatabase().beanDao().queryAll());
+        Log.e(TAG, "initData: "+ HanyuPinyinHelper.getPingYin("我爱中国"));
     }
 
     @Override
