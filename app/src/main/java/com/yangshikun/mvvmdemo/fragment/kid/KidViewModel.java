@@ -1,13 +1,12 @@
-package com.yangshikun.mvvmdemo;
+package com.yangshikun.mvvmdemo.fragment.kid;
 
 import com.yangshikun.mvvmdemo.base.BaseViewModel;
 
 /**
- * Created by yang.shikun on 2020/3/5 13:23
+ * Created by yang.shikun on 2020/7/22 14:07
  */
 
-public class MainViewModel extends BaseViewModel {
-
+public class KidViewModel extends BaseViewModel {
     @Override
     protected void onCreate() {
 
@@ -17,5 +16,4 @@ public class MainViewModel extends BaseViewModel {
     protected void onDestroy() {
 
     }
-
 }
