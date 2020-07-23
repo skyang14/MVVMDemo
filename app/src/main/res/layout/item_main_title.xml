@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yangshikun.mvvmdemo.MainViewModel" />
+        <variable
+            name="bean"
+            type="com.yangshikun.mvvmdemo.beans.MainTitleBean" />
+        <import type="com.yangshikun.mvvmdemo.R"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_centerInParent="true"
+        app:clickData="@{bean}"
+        app:onClickCommand="@{viewModel.itemClick}"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_title"
+            app:imgDrawable="@{bean.drawable}"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/qb_px_70"
+            android:layout_height="@dimen/qb_px_70"/>
+        <TextView
+            android:id="@+id/tv_title"
+            android:text="@{bean.title}"
+            app:textColor="@{bean.topStack ? R.color.orange:R.color.black}"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </RelativeLayout>
+</layout>

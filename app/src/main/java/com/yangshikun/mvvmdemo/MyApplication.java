@@ -13,6 +13,7 @@ import com.yangshikun.mvvmdemo.utils.pinyin.HanyuPinyinProperties;
  */
 
 public class MyApplication extends Application {
+    private static Context context;
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -21,8 +22,15 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        context = this.getApplicationContext();
         Utils.init(this);
         HanyuPinyinProperties.init();
         SPStaticUtils.setDefaultSPUtils(SPUtils.getInstance("MVVM"));
     }
+
+    public static Context getContext(){
+        return context;
+    }
+
+
 }
